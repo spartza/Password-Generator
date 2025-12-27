@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            /* 
+               We stack 3 layers to get the "Light & Awesome" effect:
+               1. A Gradient of very soft Red to soft Blue (very transparent).
+               2. A Heavy White layer (90% opacity) to fade out the dark image.
+               3. The Binary Code Image.
+            */
+            background-image: 
+                linear-gradient(120deg, rgba(255, 0, 0, 0.08), rgba(0, 0, 255, 0.08)),
+                linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+                url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+
+            /* Standard settings to make the image fit perfectly */
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 
+           Since the background is light now, 
+           we add a shadow to your box so it pops out 
+        */
+        .password-generator {
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+            /* Ensure the box has a background color so it's readable */
+            background-color: white; 
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="password-generator">
+        <h2>Random Password Generator</h2>
+        <div class="input-container">
+            <input type="text" id="input"  class="input" 
+            placeholder="Create Password" readonly/>
+            <i class="fa-regular fa-copy"></i>
+        </div>
+        <button class="btn">Generate</button>
+    </div>
+    
+    <div class="alert-container active">Password Copied</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
